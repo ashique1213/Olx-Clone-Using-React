@@ -115,6 +115,7 @@
 
 .loginPage span{
   cursor: pointer;
+  font-weight: 600;
 }
 
 .sellMenu {

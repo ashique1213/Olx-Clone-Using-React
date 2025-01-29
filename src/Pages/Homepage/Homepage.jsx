@@ -1,5 +1,4 @@
 import React from 'react'
-import './Homepage.css'
 import Navbar from '../../Components/Navbar/Navbar'
 import SubNav from '../../Components/SubNav/SubNav'
 import RecommendedProducts from '../../Components/RecommendedProducts/RecommendedProducts'
