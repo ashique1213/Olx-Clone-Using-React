@@ -1,6 +1,7 @@
 import React from 'react'
 import './SubNav.css'
 import Arrow from '../../assets/Arrow'
+import bannerImage from '../../assets/Screenshot 2025-01-30 113352.png'
 
 const SubNav = () => {
   return (
@@ -23,7 +24,7 @@ const SubNav = () => {
         </div>
         <div className="banner">
           <img
-            src="../../../Images/banner copy.png"
+            src={bannerImage}
             alt=""
           />
         </div>
