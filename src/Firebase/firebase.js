@@ -6,12 +6,12 @@ import { toast } from "react-toastify";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBwXk25K1Ez-vehpp6PKs1Tz8owCXG6lGI",
-    authDomain: "olx-clone-6e99a.firebaseapp.com",
-    projectId: "olx-clone-6e99a",
-    storageBucket: "olx-clone-6e99a.firebasestorage.app",
-    messagingSenderId: "295281271091",
-    appId: "1:295281271091:web:da0b4133e8cb29b8c69e46"
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID
   };
 
 // Initialize Firebase
