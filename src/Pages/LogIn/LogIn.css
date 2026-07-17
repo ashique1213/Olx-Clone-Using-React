@@ -60,10 +60,12 @@
     cursor: pointer;
     font-size: 16px;
     margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
   
   .signupBtn:hover {
     background-color: #212529;
+    transform: translateY(-2px);
   }
   
   /* Already a user? Login button */

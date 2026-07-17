@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SignUp.css";
 import OlxLogo from "../../assets/OlxLogo";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { signup } from "../../Firebase/firebase";
 
 const SignUp = () => {
@@ -9,11 +9,15 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const navigate = useNavigate();
 
   //sign-up-function
   const user_auth = async (e) => {
     e.preventDefault();
-    await signup(name, email, password, phoneNumber);
+    const success = await signup(name, email, password, phoneNumber);
+    if (success) {
+      navigate('/');
+    }
   }
 
   return (

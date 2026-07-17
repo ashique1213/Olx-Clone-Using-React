@@ -10,7 +10,7 @@ import myContext from "../../context/MyContext";
 import { logout } from "../../Firebase/firebase";
 
 const Navbar = () => {
-  const { logState } = useContext(myContext);
+  const { currentUser } = useContext(myContext);
   return (
     <div className="headerParentDiv">
       <div className="headerChildDiv">
@@ -40,13 +40,11 @@ const Navbar = () => {
           <Arrow />
         </div>
         <div className="loginPage">
-          <span
-            onClick={() => {
-              logout();
-            }}
-          >
-            {logState ? logState : "Login"}
-          </span>
+          {currentUser ? (
+            <span onClick={() => logout()}>Logout</span>
+          ) : (
+            <Link to="/login"><span>Login</span></Link>
+          )}
           <hr />
         </div>
 

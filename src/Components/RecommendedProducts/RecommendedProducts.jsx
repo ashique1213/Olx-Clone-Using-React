@@ -32,25 +32,25 @@ const RecommendedProducts = () => {
         {/* //card--link */}
         <div className="cards">
           {products.length === 0 ? (
-            <p>No products available</p>
+            <p style={{ padding: '16px' }}>No products available</p>
           ) : (
             <>
               {products.map((product) => (
-                <Link to={`/product/${product.id}`} key={product.id}>
+                <Link to={`/product/${product.id}`} key={product.id} style={{ textDecoration: 'none' }}>
                   <div className="card">
                     <div className="favorite">
                       <Heart />
                     </div>
                     <div className="image">
-                      <img src={product.imageUrl} alt={product.name} />
+                      <img src={product.imageUrl} alt={product.productName} />
                     </div>
                     <div className="content">
-                      <p className="rate">&#x20B9; {product.price}</p>
+                      <p className="rate">&#x20B9; {new Intl.NumberFormat('en-IN').format(product.price)}</p>
                       <span className="kilometer">{product.category}</span>
                       <p className="name"> {product.productName}</p>
                     </div>
                     <div className="date">
-                      <span>10/5/2021</span>
+                      <span>{product.createdAt ? new Date(product.createdAt).toLocaleDateString() : '10/5/2021'}</span>
                     </div>
                   </div>
                 </Link>

@@ -35,10 +35,12 @@ const signup = async(name, email, password, phoneNumber)=> {
         });
         console.log("New User Signed in");
         toast.success("SignUp Successfull");
+        return true;
         
     } catch (error) {
         console.log(error);
         toast.error(error.code.split('/')[1].split('-').join(' '));
+        return false;
     }
 }
 
@@ -47,9 +49,11 @@ const login = async(email, password) => {
     try {
         await signInWithEmailAndPassword(auth, email, password);
         toast.success("Login Successfull");
+        return true;
     } catch (error) {
         console.log(error);
         toast.error(error.code.split('/')[1].split('-').join(' '));
+        return false;
     }
 }
 

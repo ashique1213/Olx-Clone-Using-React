@@ -5,28 +5,11 @@ import ProductPage from './Pages/ProductPage/ProductPage'
 import SignUp from './Pages/SignUp/SignUp'
 import LogIn from './Pages/LogIn/LogIn'
 import AddProductPage from './Pages/AddProductPage/AddProductPage'
-import { onAuthStateChanged } from 'firebase/auth'
-import { auth } from './Firebase/firebase'
 import ContextProvider from './context/ContextProvider'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
-
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    onAuthStateChanged(auth, async(user) => {
-      if(user) {
-        navigate('/');
-        console.log("Logged In");
-      }else {
-        navigate('/login');
-        console.log("Logged out");
-      }
-    })
-  }, [])
-
   return (
     <ContextProvider>
       <ToastContainer theme='dark' />

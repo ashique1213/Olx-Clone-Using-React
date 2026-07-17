@@ -1,17 +1,21 @@
 import React, { useState } from "react";
 import "./LogIn.css";
 import OlxLogo from "../../assets/OlxLogo";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../Firebase/firebase";
 
 const LogIn = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const navigate = useNavigate();
 
   //login-function
   const user_auth = async (e) => {
     e.preventDefault();
-    await login(email, password);
+    const success = await login(email, password);
+    if (success) {
+      navigate('/');
+    }
   }
 
   return (
